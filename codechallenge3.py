@@ -34,9 +34,18 @@ print()
 print("================================ DELIVERY SUMMARY ================================")
 print(f"Sender: {Sender_name}")
 print(f"Item Type: {Type_of_item}")
-print(f"Fragile: {isFragile}")
+if isFragile == True:
+	print("Your Item is Fragile")
+else:
+	print("Your Item is not Fragile")
 print(f"Weight: {weight} KG")
 print(f"Distance: {distance} KM")
-print(f"Express Delivery: {is_express}")
-print(f"International Delivery: {is_international}")
+if is_express == True:
+	print("Your Item is Express Delivery")
+else:
+	print("Your Item is not Express Delivery")
+if is_international == True:
+	print("Your Item is from International Delivery")
+else:
+	print("Your Item is from National Delivery")
 print(f"Total Cost: Php{total_cost}")
