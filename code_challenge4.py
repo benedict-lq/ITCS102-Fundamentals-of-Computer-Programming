@@ -23,8 +23,6 @@ if u == username and p == password:
         has_collateral = bool(input("Do you have collateral? (yes/no) ---->: ") == "yes")
         print("============================================")
 
-    
-
         if has_collateral == True:
             print()
             item = input("What is your collateral? -->: ")
@@ -49,8 +47,7 @@ if u == username and p == password:
                 print(f"Your credit score is: {credit_score}")
                 if annual_income >= 100000:
                     print("You have high annual income") 
-                    base_interest = 4.5
-                    
+                    base_interest = 4.5                   
                 else:
                     base_interest = 5.0
                     
@@ -58,11 +55,9 @@ if u == username and p == password:
                 print(f"Your credit score is: {credit_score}")
                 if has_collateral == True:
                     print("You have a collateral")
-                    base_interest = 7.0
-                    
+                    base_interest = 7.0                    
                 elif annual_income < 40000:
                     base_interest = 9.5
-
                 else:
                     base_interest = 8.0
                                
@@ -73,6 +68,9 @@ if u == username and p == password:
 
         else:
             print("Rejected: Fails baseline ")
+
+    else:
+        print("Invalid access")
 
 elif u != username and p != password:
     print("Invalid username and password.")
