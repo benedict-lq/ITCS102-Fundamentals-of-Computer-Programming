@@ -1,17 +1,18 @@
+import getpass
+
 print("======= LOGIN =======")
 
 u = "Benedict"
 p = "akolangto123"
 
-username = input("Please enter username --->: ")
-password = input("Please enter password --->: ")
+username = input("Enter username --->: ")
+password = getpass.getpass("Enter password --->: ")
 
 if u == username and p == password:
+    first_name = input("Enter your first name: ")
+    job_descrip = input("What's your job? (Include job description)")
     
 
-
-
-loanee_fname_job_description = input("Enter your first name and your job description")
 
 
 
