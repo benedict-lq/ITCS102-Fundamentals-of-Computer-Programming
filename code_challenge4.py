@@ -23,54 +23,57 @@ if u == username and p == password:
         has_collateral = bool(input("Do you have collateral? (yes/no) ---->: ") == "yes")
         print("============================================")
 
-        if has_collateral == True:
+        if credit_score < 600:
+            print("Sorry you cannot procced in loaning, credit score too low")
+        else:
+            print("Invalid access")
+        
+
+            if has_collateral == True and credit_score >= 600:
+                print()
+                item = input("What is your collateral? -->: ")
+                value = eval(input("How much your collateral? -->: "))
+
+                if value < 30000:
+                    print("Your collateral value is invalid")
+                    has_collateral == False
+                else:
+                    has_collateral == True
+            else:
+                item = "None"
+
             print()
-            item = input("What is your collateral? -->: ")
-            value = eval(input("How much your collateral? -->: "))
 
-            if value < 30000:
-                print("Your collateral value is invalid")
-                has_collateral == False
-            else:
-                has_collateral == True
+            loan_ammount = int(input("Ammount to loan -->: "))
 
-        elif credit_score < 600:
-                        print("Rejected: Credit score too low")
+            print("============================================")
+            print()
 
-        else:
-            item = "None"
-        print()
-
-        loan_ammount = int(input("Ammount to loan -->: "))
-
-        print("============================================")
-        print()
-
-        if 65 >= age >= 21 and is_employed == True and credit_score >= 600:
-            if credit_score >= 750:
-                print(f"Your credit score is: {credit_score}")
-                if annual_income >= 100000:
-                    print("You have high annual income") 
-                    base_interest = 4.5                   
-                else:
-                    base_interest = 5.0
+            if 65 >= age >= 21 and is_employed == True and credit_score >= 600:
+                if credit_score >= 750:
+                    print(f"Your credit score is: {credit_score}")
+                    if annual_income >= 100000:
+                        print("You have high annual income") 
+                        base_interest = 4.5                   
+                    else:
+                        base_interest = 5.0
                     
-            elif 600 <= credit_score < 750:
-                print(f"Your credit score is: {credit_score}")
-                if has_collateral == True:
-                    print("You have a collateral")
-                    base_interest = 7.0                    
-                elif annual_income < 40000:
-                    base_interest = 9.5
+                elif 600 <= credit_score < 750:
+                    print(f"Your credit score is: {credit_score}")
+                    if has_collateral == True:
+                        print("You have a collateral")
+                        base_interest = 7.0                    
+                    elif annual_income < 40000:
+                        base_interest = 9.5
+                    else:
+                        base_interest = 8.0
                 else:
-                    base_interest = 8.0
-            else:
-                 base_interest = 0.0
+                    base_interest = 0.0
                  
-            print(f"The ammount you loan is: {loan_ammount} and approved at {base_interest}% interest rate")
+                print(f"The ammount you loan is: {loan_ammount} and approved at {base_interest}% interest rate")
 
-        else:
-            print("Rejected: Fails baseline ")
+            else:
+                print("Rejected: Fails baseline ")
 
     else:
         print("Invalid access")
