@@ -11,13 +11,18 @@ password = getpass.getpass("Enter password --->: ")
 if u == username and p == password:
     print("============= LOGIN SUCCESS ============")
     first_name = input("Enter your first name: ")
-    job_descrip = input("What's your job? (Include job description): ")
     age = int(input("Enter your age ---->: "))
 
     if age > 65:
-        print("Sorry you cannot procced in loaning, the maximum age for loan is 65")
-    elif age < 65:
+        print("Sorry you cannot procced in loaning, the maximum age for loaning is 65")
+    elif age < 21:
+        print("Sorry you cannot procced in loaning, the minimum age for loaning is 21")
+    elif age <= 65 and age >= 21:
         is_employed = bool(input("Are you employed? (yes/no) ---->: ") == "yes")
+        if is_employed == True:
+            job_descrip = input("What's your job? (Include job description): ")
+        else:
+            job_descrip = "none"
         credit_score = int(input("Enter your credit score ---->: "))
         annual_income = float(input("Enter your annual income ---->: "))
         has_collateral = bool(input("Do you have collateral? (yes/no) ---->: ") == "yes")
@@ -70,7 +75,7 @@ if u == username and p == password:
                 else:
                     base_interest = 0.0
                  
-                print(f"The ammount you loan is: {loan_ammount} and approved at {base_interest}% interest rate")
+                print(f"\nThe ammount you loan is: {loan_ammount} \nApproved at {base_interest}% interest rate")
 
             else:
                 print("Rejected: Fails baseline ")
