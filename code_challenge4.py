@@ -33,6 +33,10 @@ if u == username and p == password:
                 has_collateral == False
             else:
                 has_collateral == True
+
+        elif credit_score < 600:
+                        print("Rejected: Credit score too low")
+
         else:
             item = "None"
         print()
@@ -42,7 +46,7 @@ if u == username and p == password:
         print("============================================")
         print()
 
-        if 65 > age >= 21 and is_employed == True:
+        if 65 >= age >= 21 and is_employed == True and credit_score >= 600:
             if credit_score >= 750:
                 print(f"Your credit score is: {credit_score}")
                 if annual_income >= 100000:
@@ -60,10 +64,9 @@ if u == username and p == password:
                     base_interest = 9.5
                 else:
                     base_interest = 8.0
-                               
-            elif credit_score < 600:
-                print("Rejected: Credit score too low")
-
+            else:
+                 base_interest = 0.0
+                 
             print(f"The ammount you loan is: {loan_ammount} and approved at {base_interest}% interest rate")
 
         else:
