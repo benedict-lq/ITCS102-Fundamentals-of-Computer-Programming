@@ -26,14 +26,13 @@ if u == username and p == password:
         credit_score = int(input("Enter your credit score ---->: "))
         annual_income = float(input("Enter your annual income ---->: "))
         has_collateral = bool(input("Do you have collateral? (yes/no) ---->: ") == "yes")
+        print()
         print("============================================")
 
         if credit_score < 600:
             print("Sorry you cannot procced in loaning, credit score too low")
-        else:
-            print("Invalid access")
         
-
+        if credit_score >= 600:
             if has_collateral == True and credit_score >= 600:
                 print()
                 item = input("What is your collateral? -->: ")
@@ -50,7 +49,7 @@ if u == username and p == password:
             print()
 
             loan_ammount = int(input("Ammount to loan -->: "))
-
+            print()
             print("============================================")
             print()
 
@@ -79,6 +78,9 @@ if u == username and p == password:
 
             else:
                 print("Rejected: Fails baseline ")
+
+        else:
+            print("Invalid access")
 
     else:
         print("Invalid access")
