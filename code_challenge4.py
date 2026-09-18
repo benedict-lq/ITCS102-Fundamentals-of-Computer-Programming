@@ -13,11 +13,9 @@ if u == username and p == password:
     first_name = input("Enter your first name: ")
     age = int(input("Enter your age ---->: "))
     is_employed = bool(input("Are you employed? (yes/no) ---->: ") == "yes")
-
-    if is_employed == True:
-            job_descrip = input("What's your job? (Include job description): ")
     
-    elif (age <= 65 and age >= 21) and is_employed == True:
+    if (age <= 65 and age >= 21) and is_employed == True:
+        job_descrip = input("What's your job? (Include job description): ")
         credit_score = int(input("Enter your credit score ---->: "))
         annual_income = float(input("Enter your annual income ---->: "))
         has_collateral = bool(input("Do you have collateral? (yes/no) ---->: ") == "yes")
@@ -68,14 +66,11 @@ if u == username and p == password:
                  
                 print(f"\nThe ammount you loan is: {loan_ammount} \nApproved at {base_interest}% interest rate")
 
-            else:
-                print("Rejected: Fails baseline ")
-
         else:
             print("Rejected: Credit Score too low.")
 
     else:
-        print("Rejected: Fails baseline")
+        print("Rejected: Fails baseline\n\tAge minimum: 21\n\tAge maximum: 65\n\tCurrently Employed Needed")
 
 elif u != username and p != password:
     print("Invalid username and password.")
