@@ -14,7 +14,7 @@ if age >= 21 and yrs_b >= 2 and hs_defaults == False:
     base_fee = 0.0
     if credit_score >= 720:
         max_loan = 3 * rev
-        print("Your credirt score is high")
+        print("Your credit score is high")
         print(f"Your maximum loan: {max_loan}\n")
         
         if rev >= 50000:
