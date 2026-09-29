@@ -14,7 +14,7 @@ if age >= 21 and yrs_b >= 2 and hs_defaults == False:
     base_fee = 0.0
     if credit_score >= 720:
         max_loan = 3 * rev
-        print("Your credit score is high")
+        print("Your credirt score is high")
         print(f"Your maximum loan: {max_loan}\n")
         
         if rev >= 50000:
@@ -48,4 +48,9 @@ if age >= 21 and yrs_b >= 2 and hs_defaults == False:
 else:
     print("Rejected: High Risk Application or Ineligible Owner")
 
-print(f"Your base fee: {base_fee}php")
+if c_value != 0:
+    surcharge = 250
+else:
+    surcharge = 0
+
+print(f"Your base fee: {base_fee + surcharge}php")
