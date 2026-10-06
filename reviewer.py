@@ -27,15 +27,6 @@ if age >= 21 and yrs_b >= 2 and hs_defaults == False:
         else:
             print("Your collateral is not suffecient for the loan")
 
-        surcharge = 0
-
-        if (int(c_value) % 5000 != 0):
-            surcharge += 250
-        else:
-            surcharge = 0
-
-        print(f"Collateral: {collateral}| Fee: {surcharge}")
-        
     elif 620 <= credit_score < 720:
         max_loan = 1.5 * rev
         print(f"Your maximum loan: {max_loan}")
@@ -49,15 +40,6 @@ if age >= 21 and yrs_b >= 2 and hs_defaults == False:
         else:
             print("Your collateral is not suffecient for the loan")
 
-        surcharge = 0
-        
-        if (int(c_value) % 5000 != 0):
-            surcharge += 250
-        else:
-            surcharge = 0
-
-        print(f"Collateral: {collateral}| Fee: {surcharge}")
-        
     elif credit_score < 620:
         print("Rejected: Credit Score below the requirement")
 
@@ -65,3 +47,10 @@ if age >= 21 and yrs_b >= 2 and hs_defaults == False:
         pass
 else:
     print("Rejected: High Risk Application or Ineligible Owner")
+
+if c_value != 0:
+    surcharge = 250
+else:
+    surcharge = 0
+
+print(f"Your base fee: {base_fee + surcharge}php")
