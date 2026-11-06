@@ -1,9 +1,9 @@
-size = int(input("Enter the size: "))
+#Pattern of X
 
-for x in range(size):
-    for y in range(size):
-        if x + y == size - 1 or x == y:
-            print("*", end= " ")
+for x in range (5):
+    for y in range (5):
+        if x+y == 4 or x == y:
+            print("*", end="")
         else:
-            print(" ", end= " ")
+            print(" ", end="")
     print()
