@@ -35,3 +35,14 @@ for x in range(6):
     print()
 print("*" * (2 * 6), end="")
         
+#Task 3 (Z)
+print()
+row = int(input("Enter the size of Z: "))
+
+for x in range(row):
+    for y in range(row):
+        if x == 0 or x == row - 1 or y == row - 1 - x:
+            print("*", end= " ")
+        else:
+            print(" ", end= " ")
+    print()
