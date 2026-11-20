@@ -25,3 +25,5 @@ Team = {"dito":west,"doon":east,}
 print(Team["doon"])
 print(Team["dito"])
 print(Team["dito"][0][-1])
+print(Team["doon"][2][1])
+
