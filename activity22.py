@@ -46,16 +46,55 @@ East = {"Miami Heat": Miami,"Boston Celtics": Boston,"Philadelphia 76ers": phill
 nba = {"West": West,"East": East}
 
 print("=== 1. Going Down one level at a time ===")
+print()
 print(nba["West"]["San Antonio Spurs"]["Wemby"][0])
 
 print()
 print("=== 2. Going Down two levels at a time ===")
+print()
 for side in nba:
   print(side)
 
 print()
 print("=== 3. Going Down three levels at a time ===")
-for side,teams in nba.items():
+print()
+for side, teams in nba.items():
   print(side)
   for teams in teams:
     print("  ", teams)
+
+print()
+print("=== 4. Loop All levels ===")
+print()
+for side, teams in nba.items():
+  print(side)
+  for teams, players in teams.items():
+    print("  " + teams)
+    for name, info in players.items():
+      print("    " + name)
+      print("     Description:", info[0])
+      print("     Jersey Number:", info[1])
+
+print()
+print("=== 5. Count every character ===")
+print()
+count = 0
+for teams in nba.values():
+  for players in teams.values():
+    for name in players:
+      count = count + 1
+print(f"Total characters: {count}")
+
+print()
+print("=== 6. Search for a Players ===")
+print()
+search = "Lebron James"
+found = False
+for side, teams in nba.items():
+  for teams, players in teams.items():
+    if search in players:
+      print(search, "is from", teams, "(",side,")")
+      print("Jersy Number:", players[search][1])
+      found = True
+if found == False:
+  print(search, "not found")
